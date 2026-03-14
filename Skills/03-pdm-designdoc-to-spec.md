@@ -1,4 +1,4 @@
-# Skill 2｜Design Doc → 仕様書
+# Skill 3｜Design Doc → 仕様書
 
 ## このSkillの目的
 
@@ -126,7 +126,7 @@ Design Docを受け取ったら、以下の観点でチェックします。
 ### Step 4｜完成版の出力
 
 フィードバックを反映し、完成版の仕様書をMarkdownで出力します。  
-次のステップ（指示プロンプト生成）が必要な場合は、Skill 3（pdm-spec-to-prompt）に渡します。
+次のステップ（指示プロンプト生成）が必要な場合は、Skill 4（pdm-spec-to-prompt）に渡します。
 
 ---
 

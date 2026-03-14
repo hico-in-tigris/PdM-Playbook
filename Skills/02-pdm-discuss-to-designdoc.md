@@ -1,4 +1,4 @@
-# Skill 1｜AIディスカッション → Design Doc
+# Skill 2｜AIディスカッション → Design Doc
 
 ## このSkillの目的
 
@@ -100,7 +100,7 @@ AIへの伝え方は「参考：AIへの伝え方」を参照してください�
 ### Step 4｜完成版の出力
 
 フィードバックを反映し、完成版のDesign DocをMarkdownで出力します。  
-次のステップ（仕様書化）が必要な場合は、Skill 2（pdm-designdoc-to-spec）に渡します。
+次のステップ（仕様書化）が必要な場合は、Skill 3（pdm-designdoc-to-spec）に渡します。
 
 ---
 

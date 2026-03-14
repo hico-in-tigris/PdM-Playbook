@@ -26,7 +26,7 @@ PdMの仕事は**ループを回すこと**です。ユーザー理解 → 問�
 
 **AIにできないこと**: ユーザーの現場観察はAIには代替できません。CSチケットやヒアリングメモの整理はAIが得意ですが、「なぜそのWorkaroundが生まれたか」の背景理解は、実際に現場を見た人間にしか持てない文脈です。
 
-> 🔧 **Skill 0｜pdm-voice-to-problem** — CSチケット・問い合わせ・ヒアリングから問題定義を抽出する
+> 🔧 **Skill 1｜pdm-voice-to-problem** — CSチケット・問い合わせ・ヒアリングから問題定義を抽出する
 
 ---
 
@@ -36,8 +36,8 @@ PdMの仕事は**ループを回すこと**です。ユーザー理解 → 問�
 
 「なぜ？」を繰り返して本質に辿り着くことが重要です。問題定義への投資を惜しまないようにしましょう。
 
-> 🔧 **Skill 0｜pdm-voice-to-problem** — 声を問題定義に変換する  
-> 🔧 **Skill 1｜pdm-discuss-to-designdoc** — AIディスカッションで問題を整理する
+> 🔧 **Skill 1｜pdm-voice-to-problem** — 声を問題定義に変換する  
+> 🔧 **Skill 2｜pdm-discuss-to-designdoc** — AIディスカッションで問題を整理する
 
 ---
 
@@ -47,7 +47,7 @@ PdMの仕事は**ループを回すこと**です。ユーザー理解 → 問�
 
 良い仮説の条件: シンプル・検証可能・ユーザー価値に繋がっていること。
 
-> 🔧 **Skill 1｜pdm-discuss-to-designdoc** — AIとのディスカッションで仮説を構造化する
+> 🔧 **Skill 2｜pdm-discuss-to-designdoc** — AIとのディスカッションで仮説を構造化する
 
 ---
 
@@ -59,8 +59,8 @@ PdMの最重要仕事です。情報が常に不完全な中で判断し、前�
 
 決断を先送りするコストは、間違えるコストより大きいことを忘れてはいけません。
 
-> 🔧 **Skill 4｜pdm-priority-matrix** — Impact × Effort × 戦略整合性で優先順位を整理する  
-> 🔧 **Skill 5｜pdm-scope-management** — Must/Should/Could/Won'tでスコープを合意する
+> 🔧 **Skill 5｜pdm-priority-matrix** — Impact × Effort × 戦略整合性で優先順位を整理する  
+> 🔧 **Skill 6｜pdm-scope-management** — Must/Should/Could/Won'tでスコープを合意する
 
 ---
 
@@ -102,8 +102,8 @@ PdMが作るDesign Doc・仕様書・優先順位マトリクスは、関係者�
 
 PdMは実装しませんが、開発チームが最速で動ける状態を作ります。ユーザーストーリーで「誰のための機能か」を明確にし、仕様で曖昧さをなくし、モックで認識のズレを事前に解消します。
 
-> 🔧 **Skill 2｜pdm-designdoc-to-spec** — Design Doc → 仕様書  
-> 🔧 **Skill 3｜pdm-spec-to-prompt** — 仕様書 → AI実装指示プロンプト
+> 🔧 **Skill 3｜pdm-designdoc-to-spec** — Design Doc → 仕様書  
+> 🔧 **Skill 4｜pdm-spec-to-prompt** — 仕様書 → AI実装指示プロンプト
 
 ---
 
@@ -146,7 +146,7 @@ PdMは実装しませんが、開発チームが最速で動ける状態を作�
 
 ---
 
-## Part 9｜PdM思考OS（OODA + Align）
+## Part 9｜PdM思考フレーム（OODA + Align）
 
 全体を統合するフレームワークです。
 
@@ -185,7 +185,7 @@ PdMとしてAIを使いこなすには、AIの能力の境界を正確に知っ�
 
 変わらないのは問題定義力と判断力、変わるのは実装スピードです。新たに求められるのは言語化力・評価力・AIへの適切な委譲判断です。
 
-> 🔧 **Skill 0〜3** がこのフロー全体をカバーします
+> 🔧 **Skill 1〜4** がこのフロー全体をカバーします
 
 ---
 
@@ -214,8 +214,8 @@ PdMの実務を支える道具一式です。思考のフレームワークとAI
 | 問題定義テンプレ | 誰の・どんな問題か・インパクト・スコープを1枚に整理する |
 | 仮説テンプレ | 問題 → 原因仮説 → 解決仮説の三層を明文化する |
 
-> 🔧 **Skill 0｜pdm-voice-to-problem**  
-> CSチケット・問い合わせ・ヒアリング内容をインプットに、ユーザーの声を分類・整理し、問題定義サマリーを出力します。Skill 1へそのまま渡せる状態にします。
+> 🔧 **Skill 1｜pdm-voice-to-problem**  
+> CSチケット・問い合わせ・ヒアリング内容をインプットに、ユーザーの声を分類・整理し、問題定義サマリーを出力します。Skill 2へそのまま渡せる状態にします。
 
 ### Design — 設計する
 
@@ -223,7 +223,7 @@ PdMの実務を支える道具一式です。思考のフレームワークとAI
 |---|---|
 | Design Doc | Background / Problem / Goals / Non-Goals / User Story / UX Flow / Technical Notes / Metrics の8セクションで構成。「何を・誰のために・なぜ作るか」を関係者で共有するための中心ドキュメントです |
 
-> 🔧 **Skill 1｜pdm-discuss-to-designdoc**  
+> 🔧 **Skill 2｜pdm-discuss-to-designdoc**  
 > アイデアや問題定義サマリーをインプットに、AIとのディスカッションを通じて思考を整理し、Design Docを生成します。
 
 ### Build — 実装に渡す
@@ -233,10 +233,10 @@ PdMの実務を支える道具一式です。思考のフレームワークとAI
 | 仕様書 | ハッピーパス・エッジケース・表示状態・やらないことを明文化したエンジニア向け実装指示書 |
 | 指示プロンプト | Goal / Tech / Requirement / Output の4層で構成するAIへの実装指示。そのままAIに渡してプロトタイプを生成できます |
 
-> 🔧 **Skill 2｜pdm-designdoc-to-spec**  
+> 🔧 **Skill 3｜pdm-designdoc-to-spec**  
 > Design Docをインプットにエンジニアがそのまま実装に使える仕様書を生成します。エッジケース・表示状態の漏れも検出します。
 
-> 🔧 **Skill 3｜pdm-spec-to-prompt**  
+> 🔧 **Skill 4｜pdm-spec-to-prompt**  
 > 仕様書をインプットにAIへの実装指示プロンプトを生成します。コードを書かずにプロトタイプを得るための最終ステップです。
 
 ### Decision — 意思決定する
@@ -246,10 +246,10 @@ PdMの実務を支える道具一式です。思考のフレームワークとAI
 | 優先順位マトリクス | Impact × Effort × 戦略整合性の三軸で機能・施策を評価し「優先する・計画する・余裕があれば・やらない」に分類する |
 | スコープ管理 | Must / Should / Could / Won'tでリリーススコープを定義する。Won'tを明示することがスコープクリープを防ぐ |
 
-> 🔧 **Skill 4｜pdm-priority-matrix**  
+> 🔧 **Skill 5｜pdm-priority-matrix**  
 > 機能・施策リストをImpact × Effort × 戦略整合性で評価し、優先順位表と推奨アクション順を出力します。
 
-> 🔧 **Skill 5｜pdm-scope-management**  
+> 🔧 **Skill 6｜pdm-scope-management**  
 > Must / Should / Could / Won'tでスコープを定義し、合意できるスコープ定義表を出力します。
 
 ### Learn — 計測・学習する
@@ -267,24 +267,24 @@ PdMの実務を支える道具一式です。思考のフレームワークとAI
 
 | Skill | 役割 | インプット | アウトプット |
 |---|---|---|---|
-| **Skill 0**｜pdm-voice-to-problem | ユーザーの声を問題定義に変換 | CSチケット・ヒアリング | 問題定義サマリー |
-| **Skill 1**｜pdm-discuss-to-designdoc | AIディスカッションでDesign Docを作成 | アイデア・問題定義サマリー | Design Doc |
-| **Skill 2**｜pdm-designdoc-to-spec | Design Docを仕様書に変換 | Design Doc | 仕様書 |
-| **Skill 3**｜pdm-spec-to-prompt | 仕様書をAI実装指示プロンプトに変換 | 仕様書 | 指示プロンプト |
-| **Skill 4**｜pdm-priority-matrix | Impact × Effort × 戦略整合性で優先順位を整理 | 機能・施策リスト | 優先順位マトリクス |
-| **Skill 5**｜pdm-scope-management | Must/Should/Could/Won'tでスコープを管理 | 機能リスト・優先順位マトリクス | スコープ定義表 |
+| **Skill 1**｜pdm-voice-to-problem | ユーザーの声を問題定義に変換 | CSチケット・ヒアリング | 問題定義サマリー |
+| **Skill 2**｜pdm-discuss-to-designdoc | AIディスカッションでDesign Docを作成 | アイデア・問題定義サマリー | Design Doc |
+| **Skill 3**｜pdm-designdoc-to-spec | Design Docを仕様書に変換 | Design Doc | 仕様書 |
+| **Skill 4**｜pdm-spec-to-prompt | 仕様書をAI実装指示プロンプトに変換 | 仕様書 | 指示プロンプト |
+| **Skill 5**｜pdm-priority-matrix | Impact × Effort × 戦略整合性で優先順位を整理 | 機能・施策リスト | 優先順位マトリクス |
+| **Skill 6**｜pdm-scope-management | Must/Should/Could/Won'tでスコープを管理 | 機能リスト・優先順位マトリクス | スコープ定義表 |
 
 ```
 ユーザーの声
-  ↓ Skill 0
-問題定義サマリー
   ↓ Skill 1
-Design Doc ←→ ステークホルダーとの合意（Part 6）
-  ↓ Skill 4（優先順位の判断 ＋ 戦略整合性の確認）
-  ↓ Skill 5（スコープの合意）
+問題定義サマリー
   ↓ Skill 2
-仕様書
+Design Doc ←→ ステークホルダーとの合意（Part 6）
+  ↓ Skill 5（優先順位の判断 ＋ 戦略整合性の確認）
+  ↓ Skill 6（スコープの合意）
   ↓ Skill 3
+仕様書
+  ↓ Skill 4
 指示プロンプト → プロトタイプ
   ↓
 計測・仮説照合 → 次のObserveへ（Part 8）
