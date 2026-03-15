@@ -28,36 +28,46 @@ Generate the spec using the following template. Transform and elaborate on the i
 ```markdown
 # Spec｜[Feature / Initiative Name]
 
-**Date**: YYYY-MM-DD  
-**Corresponding Design Doc**: [Link or title]  
+**Date**: YYYY-MM-DD
+**Corresponding Design Doc**: [Link or title]
 **Status**: Draft / Review / Approved
 
 ---
 
 ## Overview
-<!-- Describe what is being built, in one paragraph -->
+<!-- Compress the Design Doc's Problem + Goals into one paragraph. Aim for a reader to grasp "what, why, and for whom" within 3 seconds -->
+<!-- Format: To solve [problem] for [users], we will implement [feature]. This will improve [outcome]. -->
+<!-- Avoid turning this into a Background section — keep background in the Design Doc and lead with the conclusion here -->
 
 ## Target Users
-<!-- Who this feature is for -->
+<!-- "General users" is not a definition. This affects permission design, UI decisions, and error copy — so be specific -->
+- Role / Permissions: <!-- e.g., Logged-in general users / Admin role only / Includes guest users -->
+- Usage scenario: <!-- e.g., When creating a monthly report / Immediately after first login / When an error is detected -->
+- Technical literacy: <!-- e.g., Non-engineers — avoid jargon / Internal engineers only — technical language is fine -->
 
 ## Functional Requirements
+<!-- Break down the Design Doc's UX Flow into individual features. Aim for a level of detail where engineers don't need to make judgment calls on their own -->
 
 ### [Feature Name 1]
 
 **Overview**
-<!-- What this feature does, in one sentence -->
+<!-- What this feature does, in one sentence. Make the subject explicit: "When the user does X, the system does Y" -->
 
 **Happy Path**
+<!-- Write the normal-case flow in order. Alternating between user actions and system responses makes it clearer for implementers -->
 1. User does X
 2. System does Y
 3. ...
 
 **Edge Cases / Exception Handling**
+<!-- Think through "what happens in this case?" before engineers do. Unresolved edge cases discovered mid-implementation turn into spec changes -->
+<!-- Minimum checklist: empty input / exceeds limit / user lacks permission / network failure -->
 - If X → do Y
 - If X is empty → display Y
 
 **Validation**
-<!-- Input constraints and check conditions -->
+<!-- Required whenever there is any input UI. "Handle validation properly" is not a spec -->
+<!-- For each field, specify: required vs. optional · type · character limit · allowed characters · duplicate check -->
 
 ### [Feature Name 2]
 (Repeat in the same structure)
@@ -99,19 +109,43 @@ Generate the spec using the following template. Transform and elaborate on the i
 - Data loss tolerance: <!-- e.g., Zero (all input must be persisted) / Up to 1 hour acceptable (cache-layer feature) -->
 
 ## Out of Scope
-<!-- Write in the format: "X will not be handled (reason: Y)" -->
+<!-- Without explicit "not doing X," engineers make judgment calls and stakeholders form misaligned expectations -->
+<!-- Pull from the Design Doc's Non-Goals and always include the reason. The reason makes it easier to push back on scope creep later -->
+- X will not be handled (reason: Y)
+- X will not be handled (reason: Y)
 
 ## UI/UX Spec
 
 **Display State Definitions**
-- Default state: 
-- Loading state: 
-- Error state: 
-- Empty state (no data): 
-- Success state: 
+<!-- Define every state. Error state and empty state are the most commonly missed -->
+- Default state: <!-- What the user sees on initial load -->
+- Loading state: <!-- What to show while fetching data. e.g., spinner / skeleton / nothing -->
+- Error state: <!-- Error message copy and whether a retry button is shown -->
+- Empty state (no data): <!-- When there is nothing to display. e.g., "No X yet" message + CTA button -->
+- Success state: <!-- How to notify the user on completion. e.g., toast for 3 seconds / close modal and return to list -->
+
+**Navigation & Screen Transitions**
+<!-- Define how users enter and exit this feature. Ambiguous transitions lead to inconsistency between screens -->
+- Entry point: <!-- e.g., "Add" button on the X list screen -->
+- Post-completion destination: <!-- e.g., Navigate to X detail screen / Stay on screen and show toast -->
+- Cancel behavior: <!-- e.g., Return without confirmation / Show confirmation dialog if there are unsaved changes -->
 
 ## Data Spec
-<!-- Data structure and constraints -->
+<!-- This feeds directly into DB schema and API response design. Write down the constraints you know so engineers aren't starting from scratch -->
+
+**Data Fields**
+<!-- List the key fields. You don't need to cover everything — focus on fields with business rules attached -->
+
+| Field | Type | Constraints | Notes |
+|---|---|---|---|
+| e.g., Title | String | Required / Max 100 chars | Must be unique |
+| e.g., Created at | Datetime | Auto-assigned | Not editable by users |
+
+**Data Retention & Deletion**
+<!-- Distinguish between data that can be lost and data that must never be lost -->
+- Retention period: <!-- e.g., Indefinite / Auto-deleted after 90 days -->
+- Deletion method: <!-- e.g., Hard delete / Soft delete (deletion flag) -->
+- Deletion side effects: <!-- e.g., Related X records are also deleted / Referenced data is preserved to avoid broken links -->
 
 ## Measurement & Logging
 **Measurement design must be finalized before release. It's too late to start thinking about it after launch.**
@@ -125,11 +159,14 @@ Select from the following four base metrics based on the nature of the feature:
 | Completion rate | Are they achieving their goal? | Reached final step of flow |
 | Error rate | Where are they getting stuck? | `error_shown`, `retry_triggered` |
 
-Success definition: [metric name] changes from [current value] to [target value]  
-Measurement start: within [N] days of release  
+Success definition: [metric name] changes from [current value] to [target value]
+<!-- If current value is unknown, mark as [TBD]. Pull target value from the Design Doc's Goals -->
+Measurement start: within [N] days of release
 Qualitative check: interview [N] users within [N] weeks of release
 
 ## Open Questions
+<!-- Capture anything that couldn't be decided while writing this spec. Don't leave this empty -->
+<!-- "Owner" should be the internal decision-maker or engineering lead. "Due" should be before implementation begins -->
 | # | Question | Owner | Due |
 |---|------|------|------|
 | 1 |      |      |      |
