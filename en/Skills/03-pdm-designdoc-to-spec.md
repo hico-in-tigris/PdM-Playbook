@@ -65,31 +65,38 @@ Generate the spec using the following template. Transform and elaborate on the i
 ---
 
 ## Non-Functional Requirements
+<!-- These requirements tend to be deferred, but discovering them during implementation causes expensive rework. State them explicitly here; mark anything unknown as [TBD] and move on -->
 
 ### Performance
-- Response time target: <!-- e.g., Page load within 2s, API response within 500ms -->
-- Expected peak load: <!-- e.g., 1,000 concurrent users, 100K monthly page views -->
-- Notes:
+<!-- "Faster is better" is not a requirement. Write concrete numbers engineers can use when making architecture decisions. Start from the threshold at which users would perceive something as "slow" -->
+- Response time target: <!-- e.g., Initial page load within 2s, API response within 500ms -->
+- Expected peak load: <!-- e.g., 100 req/s normally, 5× during campaigns. Always include any events that could cause sudden spikes -->
+- Notes: <!-- e.g., Bulk processing of large datasets → background job approach is acceptable -->
 
 ### Security
-- Authentication / Authorization: <!-- e.g., Logged-in users only / Admin role only -->
-- Data sensitivity: <!-- e.g., Contains PII → mask on display, exclude from logs -->
-- Other:
+<!-- "Build it securely" is not a spec. Define exactly who can access what data and to what extent -->
+- Authentication / Authorization: <!-- e.g., Logged-in users only / Admin role only / Users can only see their own data -->
+- Data sensitivity: <!-- Explicitly state if PII, payment data, or confidential data is involved. If so, also specify masking rules and log exclusions -->
+- Other: <!-- e.g., Communicates with external services → HTTPS required -->
 
 ### Accessibility
-- Compliance level: <!-- e.g., WCAG 2.1 AA / Screen reader support / Not required -->
-- Keyboard navigation: <!-- Required / Not required -->
-- Notes:
+<!-- State "not required" explicitly too. Leaving it vague often turns into a last-minute requirement before release -->
+- Compliance level: <!-- e.g., WCAG 2.1 AA / Screen reader support only / Not required (reason: internal admin tool) -->
+- Keyboard navigation: <!-- Required / Not required (mouse-only assumed) -->
+- Color contrast: <!-- e.g., Follow existing design system / Note any areas requiring individual attention -->
 
 ### Supported Environments
-- Browsers: <!-- e.g., Chrome, Safari, Firefox — latest 2 versions -->
-- Devices: <!-- e.g., Desktop only / Mobile support (iOS & Android) -->
-- OS:
+<!-- Also decide what happens in unsupported environments (show an error, degrade gracefully, etc.) -->
+- Browsers: <!-- e.g., Chrome, Safari, Firefox — latest 2 versions. IE and legacy Edge are out of scope -->
+- Devices: <!-- e.g., Desktop only / Mobile support (iOS & Android) / Responsive design -->
+- OS: <!-- e.g., No restriction / iOS 16+ and Android 12+ -->
+- Behavior in unsupported environments: <!-- e.g., Show a warning banner in unsupported browsers -->
 
 ### Availability / Reliability
-- Uptime target: <!-- e.g., 99.9% / Align with existing SLA -->
-- Behavior on failure: <!-- e.g., Show error message and isolate from other features -->
-- Data loss tolerance: <!-- e.g., Zero tolerance / Up to 1 hour acceptable -->
+<!-- This defines the user experience during failures. Errors need design decisions too -->
+- Uptime target: <!-- e.g., 99.9% (max ~44 min downtime/month) / Align with existing SLA -->
+- Behavior on failure: <!-- e.g., This feature going down must not affect other features / Show error screen with retry prompt -->
+- Data loss tolerance: <!-- e.g., Zero (all input must be persisted) / Up to 1 hour acceptable (cache-layer feature) -->
 
 ## Out of Scope
 <!-- Write in the format: "X will not be handled (reason: Y)" -->
