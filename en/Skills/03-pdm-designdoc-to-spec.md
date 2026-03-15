@@ -65,7 +65,31 @@ Generate the spec using the following template. Transform and elaborate on the i
 ---
 
 ## Non-Functional Requirements
-<!-- Performance, security, accessibility, etc. -->
+
+### Performance
+- Response time target: <!-- e.g., Page load within 2s, API response within 500ms -->
+- Expected peak load: <!-- e.g., 1,000 concurrent users, 100K monthly page views -->
+- Notes:
+
+### Security
+- Authentication / Authorization: <!-- e.g., Logged-in users only / Admin role only -->
+- Data sensitivity: <!-- e.g., Contains PII → mask on display, exclude from logs -->
+- Other:
+
+### Accessibility
+- Compliance level: <!-- e.g., WCAG 2.1 AA / Screen reader support / Not required -->
+- Keyboard navigation: <!-- Required / Not required -->
+- Notes:
+
+### Supported Environments
+- Browsers: <!-- e.g., Chrome, Safari, Firefox — latest 2 versions -->
+- Devices: <!-- e.g., Desktop only / Mobile support (iOS & Android) -->
+- OS:
+
+### Availability / Reliability
+- Uptime target: <!-- e.g., 99.9% / Align with existing SLA -->
+- Behavior on failure: <!-- e.g., Show error message and isolate from other features -->
+- Data loss tolerance: <!-- e.g., Zero tolerance / Up to 1 hour acceptable -->
 
 ## Out of Scope
 <!-- Write in the format: "X will not be handled (reason: Y)" -->
