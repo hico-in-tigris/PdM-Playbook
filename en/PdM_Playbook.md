@@ -28,7 +28,7 @@ What to capture through observation: work flows, workarounds, emotions, ineffici
 
 **What AI cannot do**: Observing users in the field cannot be replaced by AI. AI is good at organizing CS tickets and interview notes, but the contextual understanding of "why that workaround emerged" can only be held by someone who has actually been in the field.
 
-> 🔧 **Skill 1｜pdm-voice-to-problem** — Extract problem definitions from CS tickets, inquiries, and interviews
+> 🔧 **[Skill 1｜pdm-voice-to-problem](Skills/01-pdm-voice-to-problem.md)** — Extract problem definitions from CS tickets, inquiries, and interviews
 
 ---
 
@@ -38,8 +38,8 @@ A user's **request** and their **problem** are different things. "Make CSV faste
 
 It is crucial to keep asking "why?" to get to the essence. Don't skimp on investing in problem definition.
 
-> 🔧 **Skill 1｜pdm-voice-to-problem** — Convert user voices into problem definitions  
-> 🔧 **Skill 2｜pdm-discuss-to-designdoc** — Clarify problems through AI discussion
+> 🔧 **[Skill 1｜pdm-voice-to-problem](Skills/01-pdm-voice-to-problem.md)** — Convert user voices into problem definitions  
+> 🔧 **[Skill 2｜pdm-discuss-to-designdoc](Skills/02-pdm-discuss-to-designdoc.md)** — Clarify problems through AI discussion
 
 ---
 
@@ -49,7 +49,7 @@ Once the problem is defined, form a hypothesis. Structure it in three layers: **
 
 Conditions for a good hypothesis: simple, testable, and connected to user value.
 
-> 🔧 **Skill 2｜pdm-discuss-to-designdoc** — Structure hypotheses through AI discussion
+> 🔧 **[Skill 2｜pdm-discuss-to-designdoc](Skills/02-pdm-discuss-to-designdoc.md)** — Structure hypotheses through AI discussion
 
 ---
 
@@ -61,8 +61,8 @@ Evaluate along three axes: **Impact × Effort × Strategic Fit**. Using only Imp
 
 Never forget: the cost of deferring a decision is greater than the cost of making a wrong one.
 
-> 🔧 **Skill 5｜pdm-priority-matrix** — Organize priorities with Impact × Effort × Strategic Fit  
-> 🔧 **Skill 6｜pdm-scope-management** — Align on scope with Must/Should/Could/Won't
+> 🔧 **[Skill 5｜pdm-priority-matrix](Skills/05-pdm-priority-matrix.md)** — Organize priorities with Impact × Effort × Strategic Fit  
+> 🔧 **[Skill 6｜pdm-scope-management](Skills/06-pdm-scope-management.md)** — Align on scope with Must/Should/Could/Won't
 
 ---
 
@@ -104,8 +104,8 @@ Disagreement is information. Understanding the background of "why they oppose" c
 
 PdMs don't implement, but they create the conditions for the development team to move at full speed. User stories clarify "whose feature this is," specs eliminate ambiguity, and mocks resolve misalignment before it happens.
 
-> 🔧 **Skill 3｜pdm-designdoc-to-spec** — Design Doc → Spec  
-> 🔧 **Skill 4｜pdm-spec-to-prompt** — Spec → AI implementation prompt
+> 🔧 **[Skill 3｜pdm-designdoc-to-spec](Skills/03-pdm-designdoc-to-spec.md)** — Design Doc → Spec  
+> 🔧 **[Skill 4｜pdm-spec-to-prompt](Skills/04-pdm-spec-to-prompt.md)** — Spec → AI implementation prompt
 
 ---
 
@@ -171,6 +171,23 @@ As long as this loop keeps spinning, the product keeps evolving.
 
 AI is a tool to accelerate the loop. The flow **Idea → AI Discussion → Design Doc → Spec → Implementation Prompt → Prototype** lets you validate hypotheses without writing code.
 
+### Let AI Draft, PdM Reviews
+
+Design Docs, specs, and implementation prompts should not be written from scratch by the PdM — **the recommended workflow is to have AI generate the draft, then have the PdM review and refine it**.
+
+| Step | Owner | What happens |
+|---|---|---|
+| Drafting | AI | Generates a draft based on the information, context, and decisions the PdM provides |
+| Review & adjustment | PdM | Checks accuracy, logical consistency, and completeness — then edits |
+| Quality ownership | PdM | Takes final responsibility for the content of the completed document |
+
+A PdM's job is not "to write" — it's "to make sound judgments and own the quality of outcomes." Letting AI do the writing frees the PdM to focus on consistency checks, value judgments, and explaining decisions to stakeholders.
+
+**Even when AI generates the draft, the PdM is responsible for**:
+- Accuracy of problem definition (AI doesn't know on-the-ground context)
+- Soundness of prioritization (AI doesn't know organizational realities)
+- Accountability to stakeholders
+
 ### What AI Is Good At vs. What Humans Must Own
 
 To use AI effectively as a PdM, you need to know precisely where AI's capabilities end.
@@ -216,7 +233,7 @@ The complete set of tools supporting PdM work in practice. Use thinking framewor
 | Problem Definition Template | Organize on one page: whose problem, what kind of problem, impact, and scope |
 | Hypothesis Template | Make explicit the three layers: problem → root cause hypothesis → solution hypothesis |
 
-> 🔧 **Skill 1｜pdm-voice-to-problem**  
+> 🔧 **[Skill 1｜pdm-voice-to-problem](Skills/01-pdm-voice-to-problem.md)**  
 > Takes CS tickets, inquiries, and interview content as input; classifies and organizes user voices; outputs a problem definition summary ready to pass to Skill 2.
 
 ### Design — Design the Solution
@@ -225,7 +242,7 @@ The complete set of tools supporting PdM work in practice. Use thinking framewor
 |---|---|
 | Design Doc | Structured in 8 sections: Background / Problem / Goals / Non-Goals / User Story / UX Flow / Technical Notes / Metrics. The central document for aligning stakeholders on "what to build, for whom, and why." |
 
-> 🔧 **Skill 2｜pdm-discuss-to-designdoc**  
+> 🔧 **[Skill 2｜pdm-discuss-to-designdoc](Skills/02-pdm-discuss-to-designdoc.md)**  
 > Takes ideas or a problem definition summary as input; clarifies thinking through AI discussion; generates a Design Doc.
 
 ### Build — Hand Off to Engineering
@@ -235,10 +252,10 @@ The complete set of tools supporting PdM work in practice. Use thinking framewor
 | Spec | An implementation guide for engineers that documents the happy path, edge cases, display states, and out-of-scope items |
 | Implementation Prompt | AI implementation instruction structured in 4 layers: Goal / Tech / Requirements / Output. Can be handed directly to AI to generate a prototype. |
 
-> 🔧 **Skill 3｜pdm-designdoc-to-spec**  
+> 🔧 **[Skill 3｜pdm-designdoc-to-spec](Skills/03-pdm-designdoc-to-spec.md)**  
 > Takes a Design Doc as input and generates a spec engineers can use directly for implementation. Also detects missing edge cases and display states.
 
-> 🔧 **Skill 4｜pdm-spec-to-prompt**  
+> 🔧 **[Skill 4｜pdm-spec-to-prompt](Skills/04-pdm-spec-to-prompt.md)**  
 > Takes a spec as input and generates an AI implementation prompt. The final step to getting a prototype without writing code.
 
 ### Decision — Make Decisions
@@ -248,10 +265,10 @@ The complete set of tools supporting PdM work in practice. Use thinking framewor
 | Priority Matrix | Evaluate features and initiatives on three axes—Impact × Effort × Strategic Fit—and classify into "Prioritize / Plan / If Time Allows / Won't Do" |
 | Scope Management | Define release scope with Must / Should / Could / Won't. Explicitly stating Won't prevents scope creep |
 
-> 🔧 **Skill 5｜pdm-priority-matrix**  
+> 🔧 **[Skill 5｜pdm-priority-matrix](Skills/05-pdm-priority-matrix.md)**  
 > Evaluates a list of features and initiatives by Impact × Effort × Strategic Fit, and outputs a priority table with recommended action order.
 
-> 🔧 **Skill 6｜pdm-scope-management**  
+> 🔧 **[Skill 6｜pdm-scope-management](Skills/06-pdm-scope-management.md)**  
 > Defines scope with Must / Should / Could / Won't and outputs a scope definition table suitable for stakeholder alignment.
 
 ### Learn — Measure and Learn
@@ -269,12 +286,12 @@ The set of Skills as practical tools for this Playbook. Install into Claude to u
 
 | Skill | Role | Input | Output |
 |---|---|---|---|
-| **Skill 1**｜pdm-voice-to-problem | Convert user voices into problem definitions | CS tickets, interviews | Problem definition summary |
-| **Skill 2**｜pdm-discuss-to-designdoc | Create Design Doc through AI discussion | Ideas, problem definition summary | Design Doc |
-| **Skill 3**｜pdm-designdoc-to-spec | Convert Design Doc into spec | Design Doc | Spec |
-| **Skill 4**｜pdm-spec-to-prompt | Convert spec into AI implementation prompt | Spec | Implementation prompt |
-| **Skill 5**｜pdm-priority-matrix | Organize priorities with Impact × Effort × Strategic Fit | Feature / initiative list | Priority matrix |
-| **Skill 6**｜pdm-scope-management | Manage scope with Must/Should/Could/Won't | Feature list, priority matrix | Scope definition table |
+| [**Skill 1**｜pdm-voice-to-problem](Skills/01-pdm-voice-to-problem.md) | Convert user voices into problem definitions | CS tickets, interviews | Problem definition summary |
+| [**Skill 2**｜pdm-discuss-to-designdoc](Skills/02-pdm-discuss-to-designdoc.md) | Create Design Doc through AI discussion | Ideas, problem definition summary | Design Doc |
+| [**Skill 3**｜pdm-designdoc-to-spec](Skills/03-pdm-designdoc-to-spec.md) | Convert Design Doc into spec | Design Doc | Spec |
+| [**Skill 4**｜pdm-spec-to-prompt](Skills/04-pdm-spec-to-prompt.md) | Convert spec into AI implementation prompt | Spec | Implementation prompt |
+| [**Skill 5**｜pdm-priority-matrix](Skills/05-pdm-priority-matrix.md) | Organize priorities with Impact × Effort × Strategic Fit | Feature / initiative list | Priority matrix |
+| [**Skill 6**｜pdm-scope-management](Skills/06-pdm-scope-management.md) | Manage scope with Must/Should/Could/Won't | Feature list, priority matrix | Scope definition table |
 
 ```
 User Voices

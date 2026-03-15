@@ -4,7 +4,9 @@
 
 Design Docの「What & Why」を、エンジニアが実装に使える「How」の文書に変換します。
 
-**インプット**: Design Doc（Markdown形式）  
+**仕様書はAIが成文し、PdMがレビュー・調整します。** PdMの役割は「Design Docの内容を渡すこと」と「生成された仕様書の品質・判断の整合性に責任を持つこと」です。
+
+**インプット**: Design Doc（Markdown形式）
 **アウトプット**: 仕様書（Markdown形式）
 
 ---
