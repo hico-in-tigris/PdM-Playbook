@@ -16,6 +16,8 @@ The job of a PdM is to **keep the loop spinning**. User understanding → Proble
 **Scope of responsibility**: Problem definition, prioritization, product direction  
 **What not to do**: Managing implementation details, making every decision
 
+The flows in this Playbook are not meant to be completed by the PdM alone. They are designed to be carried out with stakeholders involved. It is also common for the deliverables from each flow (Design Doc, spec, priority matrix, etc.) to be created by someone other than the PdM—such as an engineer, designer, or business stakeholder. In those cases, the PdM steps into a supporting role: reviewing drafts, asking clarifying questions, and helping fill gaps. Regardless of who writes the document, it is the PdM's responsibility to ensure quality—verifying that Problem and Goals are aligned, that Non-Goals are explicitly stated, and that Metrics are measurable.
+
 ---
 
 ## Part 2｜User Understanding (Observe)
