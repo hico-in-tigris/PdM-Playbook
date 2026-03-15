@@ -19,13 +19,13 @@ First, organize your thinking through discussion with AI. This determines the qu
 The discussion proceeds in three major phases:
 
 ```
-Phase 1｜Generate ideas (5–10 min)
+Phase 1｜Generate ideas 
   └ Dump everything in your head
 
-Phase 2｜Deepen with questions (10–20 min)
+Phase 2｜Deepen with questions
   └ AI returns questions, clarifying ambiguities
 
-Phase 3｜Consolidate into structure (5–10 min)
+Phase 3｜Consolidate into structure
   └ Convert organized content into Design Doc form
 ```
 
