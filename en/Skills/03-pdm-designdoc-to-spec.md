@@ -4,7 +4,9 @@
 
 Convert the "What & Why" of a Design Doc into a "How" document that engineers can use directly for implementation.
 
-**Input**: Design Doc (Markdown format)  
+**The spec is drafted by AI; the PdM reviews and refines it.** The PdM's role is to provide the Design Doc as input — and to take responsibility for the quality and logical consistency of the generated spec.
+
+**Input**: Design Doc (Markdown format)
 **Output**: Spec (Markdown format)
 
 ---

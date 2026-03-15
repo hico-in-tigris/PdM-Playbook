@@ -4,7 +4,9 @@
 
 Convert the content of a spec into an AI implementation prompt. This is the final step to getting a working prototype without writing code.
 
-**Input**: Spec (Markdown format)  
+**The implementation prompt is drafted by AI; the PdM reviews and refines it.** The PdM's role is to provide the spec as input — and to verify that the generated prompt accurately reflects the intent of the spec.
+
+**Input**: Spec (Markdown format)
 **Output**: AI implementation prompt (ready to paste directly into AI)
 
 ---

@@ -4,7 +4,9 @@
 
 Take a "rough idea" or "sense of a problem" and, through dialogue with AI, deepen and refine it into a Design Doc that can be shared with stakeholders.
 
-**Input**: Ideas, problem sense, improvement proposals (bullet points or conversational language are fine)  
+**The Design Doc is drafted by AI; the PdM reviews and refines it.** The PdM's role is to provide information, context, and decisions — and to take responsibility for the quality of the generated draft.
+
+**Input**: Ideas, problem sense, improvement proposals (bullet points or conversational language are fine)
 **Output**: Design Doc (Markdown format)
 
 ---

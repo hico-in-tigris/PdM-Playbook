@@ -171,6 +171,23 @@ As long as this loop keeps spinning, the product keeps evolving.
 
 AI is a tool to accelerate the loop. The flow **Idea → AI Discussion → Design Doc → Spec → Implementation Prompt → Prototype** lets you validate hypotheses without writing code.
 
+### Let AI Draft, PdM Reviews
+
+Design Docs, specs, and implementation prompts should not be written from scratch by the PdM — **the recommended workflow is to have AI generate the draft, then have the PdM review and refine it**.
+
+| Step | Owner | What happens |
+|---|---|---|
+| Drafting | AI | Generates a draft based on the information, context, and decisions the PdM provides |
+| Review & adjustment | PdM | Checks accuracy, logical consistency, and completeness — then edits |
+| Quality ownership | PdM | Takes final responsibility for the content of the completed document |
+
+A PdM's job is not "to write" — it's "to make sound judgments and own the quality of outcomes." Letting AI do the writing frees the PdM to focus on consistency checks, value judgments, and explaining decisions to stakeholders.
+
+**Even when AI generates the draft, the PdM is responsible for**:
+- Accuracy of problem definition (AI doesn't know on-the-ground context)
+- Soundness of prioritization (AI doesn't know organizational realities)
+- Accountability to stakeholders
+
 ### What AI Is Good At vs. What Humans Must Own
 
 To use AI effectively as a PdM, you need to know precisely where AI's capabilities end.
